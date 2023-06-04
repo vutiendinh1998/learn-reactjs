@@ -1,10 +1,10 @@
-import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
-import TodoFeature from './features/Todo';
-import AlbumFeature from './features/Album';
-import NotFound from './components/NotFound';
 import { useEffect } from 'react';
+import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
 import productApi from './api/productApi';
-
+import Header from './components/Header';
+import NotFound from './components/NotFound';
+import AlbumFeature from './features/Album';
+import TodoFeature from './features/Todo';
 function App() {
   useEffect(() => {
     const fetchProducts = async () => {
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      Header
+      <Header/>
       <p>
         <NavLink to= '/todos' activeClassName='active-menu'>Todos</NavLink>
       </p>    
